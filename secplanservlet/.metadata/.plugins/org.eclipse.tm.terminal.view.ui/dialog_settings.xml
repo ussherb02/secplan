@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="LaunchTerminalSettingsDialog">
+		<item value="SSH Terminal" key="terminalLabel"/>
+		<section name="SettingsPanelControl">
+			<section name="SSH Terminal">
+				<item value="localhost" key="lastHost"/>
+				<list key="hosts">
+					<item value="localhost|ssh.keep_alive:300:ip.port:22:ip.host:localhost:savePassword:true:encoding:null:timeout:0:saveUser:true"/>
+				</list>
+			</section>
+			<section name="Local Terminal">
+			</section>
+		</section>
+	</section>
+</section>

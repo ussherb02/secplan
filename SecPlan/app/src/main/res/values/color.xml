@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="list_item_title">#fff</color>
+    <color name="list_background">#303030</color>
+    <color name="list_background_pressed">#992416</color>
+    <color name="list_divider">#272727</color>
+    <color name="counter_text_bg">#626262</color>
+    <color name="counter_text_color">#c5c4c4</color>
+    <color name="blue">#0088cc</color>
+    <color name="grey">#eeeeee</color>
+    <color name="grey1">#dddddd</color>
+    <color name="grey2">#666666</color>
+    <color name="grey3">#777777</color>
+    <color name="grey4">#cccccc</color>
+    <color name="blue1">#ff388ccc</color>
+    <color name="blue2">#ff2c00cc</color>
+    <color name="grey5">#999999</color>
+</resources>

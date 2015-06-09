@@ -1,0 +1,12 @@
+
+1) Create a mongodb database called "database name"
+
+2) Change the database name in the servlet configuration file
+
+3) Import the json files into the database
+
+4) Change the path of the configuration file in the webapp (secplanservlet/secplan/src/main/webapp/WEB-INF/web.xml)
+
+5) Delop the servlet on a tomcat server
+
+6) Run the android app 

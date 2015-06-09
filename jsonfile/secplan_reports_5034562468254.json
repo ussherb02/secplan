@@ -1,0 +1,6 @@
+{ "_id" : { "$oid" : "555b0a902e1bb71d856f6788" }, "custom_report" : "Hello world", "daily_report" : [ "Collapsed", "Badly wounded" ], "time" : "19 May 2015 12:03:59", "personalID" : 2257 }
+{ "_id" : { "$oid" : "555b10892e1bb71d856f6789" }, "custom_report" : "Hello", "daily_report" : [ "Dead", "Collapsed" ], "time" : "19 May 2015 12:29:29", "personalID" : 2256 }
+{ "_id" : { "$oid" : "557689c72e1bb70dca34e5ff" }, "custom_report" : "i found out that not all people seem  to be who the really are.", "time" : "9 Jun 2015 08:38:00", "personalID" : 2256 }
+{ "_id" : { "$oid" : "5576ab3a2e1bb70dca34e600" }, "daily_report" : [ "Still breathing" ], "time" : "9 Jun 2015 11:00:42", "personalID" : 2256 }
+{ "_id" : { "$oid" : "5576e7062e1bb70e15292d14" }, "daily_report" : [ "Dead" ], "time" : "9 Jun 2015 15:15:51", "personalID" : 2256 }
+{ "_id" : { "$oid" : "5576e8812e1bb70e15292d15" }, "custom_report" : "Myreporr", "daily_report" : [ "Car accident" ], "time" : "9 Jun 2015 15:22:09", "personalID" : 2256 }

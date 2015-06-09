@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="at.secplan.ussher.navi.PeronalDataFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/header"
+        android:background="@color/blue"
+        android:layout_margin="-16dp">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/company_name"
+            android:text="Company Name"
+            android:gravity="center"
+            android:typeface="serif"
+            android:textSize="20dp"
+            android:textColor="@color/grey"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Ussher Ebenezer Bonney"
+            android:id="@+id/name"
+            android:textColor="@color/grey"
+            android:layout_below="@+id/company_name"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingLeft="10dp" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="2256"
+            android:id="@+id/personal_id"
+            android:textColor="@color/grey"
+            android:layout_below="@+id/name"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Today's date"
+            android:textColor="@color/grey"
+            android:id="@+id/date"
+            android:layout_below="@+id/personal_id"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingLeft="10dp" />
+
+    </RelativeLayout>
+
+
+    <ExpandableListView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/expandable_list_view"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/header"
+        android:layout_marginTop="5dp">
+
+    </ExpandableListView>
+</RelativeLayout>

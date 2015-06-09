@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.internal.QuickAccess">
+		<item value="494" key="dialogHeight"/>
+		<item value="867" key="dialogWidth"/>
+		<list key="textEntries">
+		</list>
+		<list key="orderedElements">
+		</list>
+		<list key="orderedProviders">
+		</list>
+		<list key="textArray">
+		</list>
+	</section>
+	<section name="ImportExportAction">
+	</section>
+	<section name="ShowViewDialog">
+		<item value="374" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="org.eclipse.tm.terminal.view.ui.TerminalsView" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="415" key="DIALOG_HEIGHT"/>
+		<item value="465" key="DIALOG_X_ORIGIN"/>
+		<item value="96" key="DIALOG_Y_ORIGIN"/>
+		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ui"/>
+			<item value="org.eclipse.mylyn.ui"/>
+			<item value="com.aptana"/>
+			<item value="org.eclipse.tm.terminal.view.ui.views.category"/>
+			<item value="org.eclipse.ui.internal.otherCategory"/>
+		</list>
+	</section>
+	<section name="FileSystemImportWizard">
+	</section>
+</section>

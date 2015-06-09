@@ -1,0 +1,185 @@
+package secplan;
+
+import java.util.Arrays;
+
+import org.bson.types.ObjectId;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.mongodb.BasicDBObject;
+import com.mongodb.Cursor;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBObject;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoCredential;
+import com.mongodb.ServerAddress;
+
+/**
+ * Created by ussher on 09.05.15.
+ */
+public class DBConnection {
+    private static DBConnection instance = null;
+
+    private String database;
+    private String username;
+    private String password;
+    private String server;
+    private int port;
+    private MongoClient client;
+    private DB db;
+
+    private DBConnection(){
+    }
+
+    public static DBConnection getInstance(){
+        if(instance == null){
+            return instance = new DBConnection();
+        }
+        return instance;
+    }
+
+    public boolean connect(){
+        try {
+            MongoCredential credential = MongoCredential.createCredential(username, database, password.toCharArray());
+            client = new MongoClient(new ServerAddress(server, port), Arrays.asList(credential));
+            db = client.getDB(database);
+            //client.getDatabase(database);
+            
+            return true;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public void setParameters(String database, String username, String server, String password, int port){
+        instance.database = database;
+        instance.username = username;
+        instance.server = server;
+        instance.password = password;
+        instance.port = port;
+    }
+
+    public JSONObject getDefaultReport(){
+        JSONObject object = new JSONObject();
+        String data = "";
+
+        DBCollection collection = db.getCollection("generalReports");
+        Cursor cursor = collection.find();
+
+        try {
+            while(cursor.hasNext()) {
+                data += cursor.next();
+            }
+        } finally {
+            cursor.close();
+        }
+        if(!data.equals("")){
+            try {
+                object = new JSONObject(data);
+                return object;
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+    
+    public JSONObject getPersonalData(int id){
+    	JSONObject object = new JSONObject();
+        String data = "";
+
+        BasicDBObject query = new BasicDBObject("personalID",id);
+        
+        DBCollection collection = db.getCollection("personalData");
+        Cursor cursor = collection.find(query);
+
+        try {
+            while(cursor.hasNext()) {
+                data += cursor.next();
+            }
+        } finally {
+            cursor.close();
+        }
+        if(!data.equals("")){
+            try {
+                object = new JSONObject(data);
+                return object;
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+    
+    public JSONObject getWeeklyTasks(){
+    	JSONObject object = new JSONObject();
+        String data = "";
+
+        BasicDBObject query = new BasicDBObject("completed",false);
+        
+        DBCollection collection = db.getCollection("weeklyTasks");
+        Cursor cursor = collection.find(query);
+
+        try {
+            while(cursor.hasNext()) {
+                data += cursor.next();
+            }
+        } finally {
+            cursor.close();
+        }
+        if(!data.equals("")){
+            try {
+                object = new JSONObject(data);
+                return object;
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+    
+    public void setTasksComplete(String arg){
+    	BasicDBObject newDocument = new BasicDBObject();
+    	newDocument.append("$set", new BasicDBObject().append("completed", true));
+    	
+    	BasicDBObject searchQuery = new BasicDBObject().append("_id", new ObjectId(arg));
+    	
+    	DBCollection collection = db.getCollection("weeklyTasks");
+    	collection.update(searchQuery, newDocument);
+    }
+    
+    public JSONObject getCompany() {
+    	JSONObject object = new JSONObject();
+        String data = "";
+
+        DBCollection collection = db.getCollection("generalReports");
+        Cursor cursor = collection.find();
+
+        try {
+            while(cursor.hasNext()) {
+                data += cursor.next();
+            }
+        } finally {
+            cursor.close();
+        }
+        if(!data.equals("")){
+            try {
+                object = new JSONObject(data);
+                return object;
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+	}
+    
+    public void disconnect(){
+        if(instance != null) {
+            instance.client.close();
+            instance = null;
+        }
+    }
+}

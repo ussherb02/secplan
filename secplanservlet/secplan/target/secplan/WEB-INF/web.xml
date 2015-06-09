@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
+   <!-- <listener>
+		<listener-class>
+             secplan.AppContextListener 
+        </listener-class>
+   </listener> -->
+    
+    <servlet>
+        <servlet-name>MyServlet</servlet-name>
+        <servlet-class>secplan.MyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyServlet</servlet-name>
+        <url-pattern>/data</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+    <context-param>
+        <param-name>config.properties</param-name>
+        <param-value>/mydev/secplan/config.properties</param-value>
+    </context-param>
+    
+</web-app>

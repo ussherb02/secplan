@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.servlet.annotation.WebListener"/>
+<fullyQualifiedTypeName name="java.net.URL"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="com.mongodb.MongoClientURI"/>
+<fullyQualifiedTypeName name="java.net.UnknownHostException"/>
+<fullyQualifiedTypeName name="com.mongodb.MongoCredential"/>
+<fullyQualifiedTypeName name="com.mongodb.MongoClient"/>
+<fullyQualifiedTypeName name="com.mongodb.ServerAddress"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="com.mongodb.BasicDBObject"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="org.bson.types.ObjectId"/>
+<fullyQualifiedTypeName name="org.elasticsearch.common.regex.Regex"/>
+<fullyQualifiedTypeName name="com.mongodb.DBObject"/>
+<fullyQualifiedTypeName name="com.mongodb.util.JSON"/>
+<fullyQualifiedTypeName name="org.json.JSONObject"/>
+</qualifiedTypeNameHistroy>

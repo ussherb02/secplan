@@ -1,0 +1,1 @@
+{ "_id" : { "$oid" : "555742e9e39c94d2b09b6645" }, "reports" : [ "Dead", "Bleeding", "Collapsed", "Badly wounded", "Still breathing", "Car accident", "Bicycle accident" ] }

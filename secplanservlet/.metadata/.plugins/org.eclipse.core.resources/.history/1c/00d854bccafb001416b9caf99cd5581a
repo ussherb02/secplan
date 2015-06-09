@@ -1,0 +1,96 @@
+/*
+   For step-by-step instructions on connecting your Android application to this backend module,
+   see "App Engine Java Servlet Module" template documentation at
+   https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/master/HelloWorld
+*/
+package secplan;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class MyServlet extends HttpServlet {
+
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -463786621936530430L;
+	private JSONObject data = new JSONObject();
+    DBConnection dbConnection;
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
+        //get database connection from servlet context
+        dbConnection = (DBConnection) getServletContext().getAttribute("DATABASE_CONNECTION");
+    }
+
+    @Override
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws IOException {
+        doPost(req,resp);
+    }
+
+    @Override
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws IOException {
+        //String name = req.getParameter("name");
+        //resp.setContentType("text/plain");
+    	if(dbConnection == null){
+    		System.out.println("NULL");
+    	}
+    	
+    	System.out.println(dbConnection.getDefaultReport().toString());
+
+        ArrayList<String> list = new ArrayList<String>();
+        list.add("hehehehehehehehehehehehehehehehe");
+        list.add("uibzuv zijkbougv piöug hökgf uh lkfk");
+        list.add("bugv uoöogu iöh fzhvjugv iö öizvijbih");
+        list.add("hu");
+        list.add("oiooio");
+        list.add("oiokojbj");
+        list.add("ubihvtviöuhbouöbi zijvpziköjp");
+
+        try {
+            JSONObject obj = new JSONObject();
+            for(int i = 0; i < list.size(); i++){
+                String temp = "a"+i;
+                obj.put(temp,list.get(i));
+            }
+            JSONArray array = new JSONArray();
+            for (int i = 0; i < obj.length(); i ++){
+                String temp = "a"+i;
+                array.put(obj.get(temp));
+            }
+
+            data.put("company_name", "Backer and Partners");
+            data.put("name", "Ussher Ebenezer Bonney");
+            data.put("id", "2256");
+            data.put("report", array);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        resp.setContentType("application/json");
+        resp.setCharacterEncoding("UTF-8");
+        //if (name == null) {
+        //    resp.getWriter().println("Please enter a name");
+        //}
+
+        PrintWriter out = resp.getWriter();
+        out.print(data);
+        out.flush();
+        //resp.getWriter().println("Hello I'm gonna do amazing stuff with this :) " + name);
+    }
+}
